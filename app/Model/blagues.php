@@ -1,35 +1,21 @@
 <?php 
 require 'DbConnection.php';
+
 $con = new DBConnection();
+$connect = $con->connection();
 
-
-function add(){
-    echo "1";
+function add($texte,$dateCreate){
+    
     try{
-        
-        global $con ;
-        $qry = "INSERT INTO blague( title, description, dateCreate) VALUES (':title',':descriptio',':dateCreate')";
-        $stmt = $con->connection()->prepare($qry);
-        $stmt->bindParam(':title',$title);
-        $stmt->bindParam(':descriptio',$desciption);
+        global $connect ;
+        $qry = "INSERT INTO joke(texte,dateCreate) VALUES (:texte,:dateCreate)";
+        $stmt = $connect->prepare($qry);
+        $stmt->bindParam(':texte',$texte);
         $stmt->bindParam(':dateCreate',$dateCreate);
-        $title = "nokta 2002";
-        $desciption = "nokta nadya";
-        $dateCreate = date("yy-dd-mm");
         $stmt->execute();
-        echo "2";
         
-        echo "3";
-
-
     }catch(PDOException $e){
         "Error".$e->getMessage();
     }
-
-
 }
-
-
-add();
-
 
