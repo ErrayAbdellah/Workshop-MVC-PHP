@@ -17,7 +17,13 @@ class Controller extends DBConnection{
 }
 
 
-$test =new  Controller();
-echo "<pre>";
-var_dump($test->show());
-echo "</pre>";
+
+
+
+
+
+
+// $test =new  Controller();
+// echo "<pre>";
+// var_dump($test->show());
+// echo "</pre>";
