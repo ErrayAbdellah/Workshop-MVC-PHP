@@ -40,4 +40,12 @@ class Blague{
             "Error".$e->getMessage();
         }
     }
+
+    public static function edit($connect){
+
+    }
+
+    public static function delete($connect){
+
+    }
 }
