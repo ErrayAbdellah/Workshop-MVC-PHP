@@ -4,8 +4,13 @@
          require 'app/Controller/blagues.class.php';
          require "app/Views/nav.php" ;
          require "app/Views/show.php" ;
-         require "app/Views/add.php" ;
+         require "app/Views/edit.php" ;
          
+         
+         if(isset($_GET['BntAdd'])){
+               // header('location:index.php');
+               require "app/Views/add.php" ;
+         }
 ?>
 
 

@@ -40,6 +40,17 @@ class Blague{
             "Error".$e->getMessage();
         }
     }
+    public static function showEdit($id,$connect){
+        try{
+            $qry = "SELECT * FROM joke WHERE id=:id ";
+            $stmt = $connect->prepare($qry);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            "Error".$e->getMessage();
+        }
+    }
 
     public static function edit($id,$texte,$connect){
         try{

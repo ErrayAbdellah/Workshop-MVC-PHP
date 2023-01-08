@@ -18,15 +18,19 @@ class ControllerJoke extends DBConnection{
     function edit($id,$texte){
         $connect = $this->connection();
         Blague::edit($id,$texte,$connect);
-       
+        
     }
     function delete($id){
         $connect = $this->connection();
         Blague::delete($id,$connect);
-       
     }
 
-
+    function showEdit($id)
+    {
+        $connect = $this->connection();
+        $result = Blague::showEdit($id,$connect);
+        return $result;
+    }
 
 }
 

@@ -6,17 +6,7 @@
     $jokes->delete($_GET['delete']);
     header('location:index.php');
     }
-    if(isset($_GET['edit'])){
-
     
-
-        if(isset()){
-            $jokes->edit($_GET['edit']);
-    
-            header('location:index.php');
-        }
-    }
-
 
 ?>
 
