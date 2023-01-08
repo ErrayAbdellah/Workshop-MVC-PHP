@@ -1,5 +1,5 @@
 <?php 
-require 'DbConnection.php';
+// require 'DbConnection.php';
 
 
 
@@ -41,11 +41,27 @@ class Blague{
         }
     }
 
-    public static function edit($connect){
+    public static function edit($id,$texte,$connect){
+        try{
+            $qry = "UPDATE joke SET texte= :texte  WHERE id=:id ";
+            $stmt = $connect->prepare($qry);
+            $stmt->bindParam(':texte', $texte);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
 
+        }catch(PDOException $e){
+            "Error" . $e->getMessage();
+        }
     }
 
-    public static function delete($connect){
-
+    public static function delete($id,$connect){
+        try{
+            $qry = "DELETE FROM joke WHERE id=:id ";
+            $stmt = $connect->prepare($qry);
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+        }catch(PDOException $e){
+            "Error" . $e->getMessage();
+        }
     }
 }

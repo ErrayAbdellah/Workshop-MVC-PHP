@@ -1,20 +1,16 @@
 
 <?php require 'app/Views/view/head.php' ;
-
-        // require "app/Views/addBluges.php" ;
+         require 'app/Model/blagues.php';
+         require 'app/Controller/blagues.class.php';
+         require "app/Views/nav.php" ;
+         require "app/Views/show.php" ;
+         require "app/Views/add.php" ;
+         
 ?>
 
-<section class="card h-100 bg-black">
-    <div>
-        g
-    </div>
-</section>
 
 
-<section class="container bg-darck">
-    <div>
-        h
-    </div>
-</section>
+
+
 
 <?php require 'app/Views/view/footer.php' ?>

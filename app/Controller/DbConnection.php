@@ -4,7 +4,7 @@
 class DBConnection{
     private $host   = "localhost";
     private $name   = "root";
-    private $dbName = "workshop_mvc_php";
+    private $dbName = "workshop-mvc-php";
     private $pwd    = "";
 
 

@@ -1,29 +1,33 @@
 <?php
 
-require_once '../Model/blagues.php';
-require_once 'DbConnection.php';
+require 'DbConnection.php';
+// require '../Model/blagues.php';
 
-class Controller extends DBConnection{
+class ControllerJoke extends DBConnection{
     // connection();
-    function add(){
+    function add($jokes){
        $connect = $this->connection();
-       Blague::Add("abdeelllah",$connect);
+       Blague::Add($jokes,$connect);
     }
     
     function show(){
         $connect = $this->connection();
-        return Blague::show($connect);
+        $result = Blague::show($connect);
+        return $result;
     }
+    function edit($id,$texte){
+        $connect = $this->connection();
+        Blague::edit($id,$texte,$connect);
+       
+    }
+    function delete($id){
+        $connect = $this->connection();
+        Blague::delete($id,$connect);
+       
+    }
+
+
+
 }
 
 
-
-
-
-
-
-
-// $test =new  Controller();
-// echo "<pre>";
-// var_dump($test->show());
-// echo "</pre>";
